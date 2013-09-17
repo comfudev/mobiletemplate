@@ -22,4 +22,5 @@
 	<icon src="icons/android/chiha-icon.png" gap:platform="android" gap:density="hdpi" />
 	<icon src="icons/android/chiha-icon.png" gap:platform="android" gap:density="xhdpi" />
 	<preference name="stay-in-webview" value="true" />
+	<access origin="http://comfu.com" subdomains="true" />
 </widget>
