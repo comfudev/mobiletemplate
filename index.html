@@ -117,7 +117,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://comfu.com', '_self', 'location=yes');
+         var ref = window.open('http://comfu.com', '_blank', 'location=yes');
          ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
          ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
          ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
