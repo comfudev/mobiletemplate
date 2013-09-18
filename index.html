@@ -137,15 +137,11 @@
     // onSuccess Geolocation
     //
     function onSuccess(position) {
-        var element = document.getElementById('geolocation');
-        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          + position.timestamp                    + '<br />';
+        var latlon=position.coords.latitude+","+position.coords.longitude;
+
+	  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+	  +latlon+"&zoom=14&size=200x100&sensor=false";
+	  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
     }
 
     // onError Callback receives a PositionError object
@@ -155,11 +151,7 @@
               'message: ' + error.message + '\n');
     }
 	
-		var latlon=position.coords.latitude+","+position.coords.longitude;
-
-	  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
-	  +latlon+"&zoom=14&size=200x100&sensor=false";
-	  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
+		
     </script>
 	</head>
 	<body>
